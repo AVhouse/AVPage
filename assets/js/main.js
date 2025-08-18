@@ -77,7 +77,7 @@
 					var post 	= $(this),
 						bg 		= post.data('bg');
 
-					post.css( 'background-image', 'url(images/' + bg + ')' );
+					post.css( 'background-image', 'url(/RoadTrip/images/' + bg + ')' );
 
 				});
 
@@ -121,6 +121,16 @@
 					resetForms: true,
 					side: 'right'
 				});
+
+		// Load background images
+		$('.bg-img').each(function() {
+			var $this = $(this),
+				$bg = $this.data('bg');
+				
+			if ($bg) {
+				$this.css('background-image', 'url("' + $bg + '")');
+			}
+		});
 
 	});
 
